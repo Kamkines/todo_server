@@ -10,6 +10,8 @@
         console.log(data);
       }
 
+      // loadTodoItems() - загрузка объектов и указание ее в переменной
+
       async function createTodoItem() {
         const response = await fetch('http://localhost:3000/api/todos', {
           method: 'POST',
@@ -23,14 +25,18 @@
         console.log(data);
       }
 
+      // createTodoItem() - создание объекта 
+
       async function getTodoItem() {
-        const response = await fetch('http://localhost:3000/api/todos/1608029025426');
+        const response = await fetch('http://localhost:3000/api/todos/1712660255991');
         const data = await response.json();
         console.log(data);
       }
 
+      // getTodoItem() - получение объекта 
+
       async function markTodoAsDone() {
-        const response = await fetch('http://localhost:3000/api/todos/1608029025426', {
+        const response = await fetch('http://localhost:3000/api/todos/1712660255991', {
           method: 'PATCH',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ done: true })
@@ -39,8 +45,10 @@
         console.log(data);
       }
 
+      // markTodoAsDone() - отмечаем объект как выполненный
+
       async function deleteTodoItem() {
-        const response = await fetch('http://localhost:3000/api/todos/1608029025426', {
+        const response = await fetch('http://localhost:3000/api/todos/1712660255991', {
           method: 'DELETE',
         });
         if (response.status === 404)
@@ -48,6 +56,9 @@
         const data = await response.json();
         console.log(data);
       }
+
+      deleteTodoItem()
+      // - удаление объекта
     </script>
   </head>
   <body>
